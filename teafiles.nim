@@ -85,7 +85,7 @@ type
     items: ItemSection
     data: ptr[UncheckedArray[byte]]
     underlying: MemFile
-  AnyTeaFile = TeaFile or DynTeaFile
+  AnyTeaFile* = TeaFile or DynTeaFile
   Number* = object
     case kind*: FieldType
     of DoesNotExist:
@@ -115,9 +115,9 @@ type
     time*: TimeSection
     namevalues*: NameValueSection
     items*: ItemSection
-  WritableTeaFile = object
-    meta: Meta
-    stream: Stream
+  WritableTeaFile* = object
+    meta*: Meta
+    stream*: Stream
 
 ### POINTER HELPERS ###
 
